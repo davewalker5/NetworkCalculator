@@ -78,42 +78,40 @@ Returns the following details for the network specified in the request body:
 
 The request body is in text/json format can be supplied in one of two forms, depending on the format in which the IP address is specified:
 
-```
-{
-    "ip_address": "172.16.35.123",
-    "subnet_mask": "255.255.240.0"
-}
-```
+::
+    {
+        "ip_address": "172.16.35.123",
+        "subnet_mask": "255.255.240.0"
+    }
 
 or:
 
-```
-{
-    "ip_address": "172.16.35.123/20"
-}
-```
+::
+    {
+        "ip_address": "172.16.35.123/20"
+    }
 
 Requests are sent using the POST verb.
 
 A typical response is:
 
-```
-[
-    {
-        "broadcast": [172, 16, 47, 255],
-        "broadcast_binary": ["10101100", "00010000", "00101111", "11111111"],
-        "first": [172, 16, 32, 1],
-        "first_binary": ["10101100", "00010000", "00100000", "00000001"],
-        "last": [172, 16, 47, 254],
-        "last_binary": ["10101100", "00010000", "00101111", "11111110"],
-        "network": [172, 16, 32, 0],
-        "network_binary": ["10101100", "00010000", "00100000", "00000000"],
-        "network_bits": 20,
-        "subnet": [255, 255, 240, 0],
-        "subnet_binary": ["11111111", "11111111", "11110000", "00000000"]
-    }
-]
-```
+::
+    [
+        {
+            "broadcast": [172, 16, 47, 255],
+            "broadcast_binary": ["10101100", "00010000", "00101111", "11111111"],
+            "first": [172, 16, 32, 1],
+            "first_binary": ["10101100", "00010000", "00100000", "00000001"],
+            "last": [172, 16, 47, 254],
+            "last_binary": ["10101100", "00010000", "00101111", "11111110"],
+            "network": [172, 16, 32, 0],
+            "network_binary": ["10101100", "00010000", "00100000", "00000000"],
+            "network_bits": 20,
+            "subnet": [255, 255, 240, 0],
+            "subnet_binary": ["11111111", "11111111", "11110000", "00000000"]
+        }
+    ]
+
 
 /ipv4/subnet
 ------------
@@ -127,22 +125,20 @@ Given an IP address and a subnet mask (or number of network bits) and a number o
 
 The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
 
-```
-{
-    "ip_address": "10.1.1.0",
-    "subnet_mask": "255.255.255.0",
-    "hosts": 14
-}
-```
+::
+    {
+        "ip_address": "10.1.1.0",
+        "subnet_mask": "255.255.255.0",
+        "hosts": 14
+    }
 
 or:
 
-```
-{
-    "ip_address": "10.1.1.0/24",
-    "hosts": 14
-}
-```
+::
+    {
+        "ip_address": "10.1.1.0/24",
+        "hosts": 14
+    }
 
 Requests are sent using the POST verb.
 
@@ -150,22 +146,20 @@ Requests are sent using the POST verb.
 
 The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
 
-```
-{
-    "ip_address": "10.128.192.0",
-    "subnet_mask": "255.255.192.0",
-    "networks": 30
-}
-```
+::
+    {
+        "ip_address": "10.128.192.0",
+        "subnet_mask": "255.255.192.0",
+        "networks": 30
+    }
 
 or:
 
-```
-{
-    "ip_address": "10.128.192.0/18",
-    "networks": 30
-}
-```
+::
+    {
+        "ip_address": "10.128.192.0/18",
+        "networks": 30
+    }
 
 Requests are sent using the POST verb.
 
@@ -174,27 +168,26 @@ Response
 
 A typical response is as follows:
 
-```
-[
-    {
-        "network_bits": 23,
-        "networks": [
-            {
-                "broadcast": [10, 128, 193, 255],
-                "broadcast_binary": ["00001010", "10000000", "11000001", "11111111"],
-                "first": [10, 128, 192, 1],
-                "first_binary": ["00001010", "10000000", "11000000", "00000001"],
-                "last": [10, 128, 193, 254],
-                "last_binary": ["00001010", "10000000", "11000001", "11111110"],
-                "network": [10, 128, 192, 0],
-                "network_binary": ["00001010", "10000000", "11000000", "00000000"]
-            },
-            :
-            :
-        ]
-    }
-]
-```
+::
+    [
+        {
+            "network_bits": 23,
+            "networks": [
+                {
+                    "broadcast": [10, 128, 193, 255],
+                    "broadcast_binary": ["00001010", "10000000", "11000001", "11111111"],
+                    "first": [10, 128, 192, 1],
+                    "first_binary": ["00001010", "10000000", "11000000", "00000001"],
+                    "last": [10, 128, 193, 254],
+                    "last_binary": ["00001010", "10000000", "11000001", "11111110"],
+                    "network": [10, 128, 192, 0],
+                    "network_binary": ["00001010", "10000000", "11000000", "00000000"]
+                },
+                :
+                :
+            ]
+        }
+    ]
 
 The "networks" element of the response is a list of network details for each of the calculated subnets.
 
