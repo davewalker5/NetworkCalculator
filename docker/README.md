@@ -181,23 +181,23 @@ The subnetcalculator image was been built with the following:
 | Python | 3.10.0 |
 | Docker Desktop | 4.21.1 (114176) |
 
-Other dependencies and their versions are listed in the project's [requirements.txt](https://github.com/davewalker5/SubnetCalculator/blob/main/requirements.txt) file
+Other dependencies and their versions are listed in the project's [requirements.txt](https://github.com/davewalker5/NetworkCalculator/blob/main/requirements.txt) file
 
 ## Find Us
 
-* [SubnetCalculator on GitHub](https://github.com/davewalker5/SubnetCalculator)
+* [SubnetCalculator on GitHub](https://github.com/davewalker5/NetworkCalculator)
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/davewalker5/SubnetCalculator/tags).
+For the versions available, see the [tags on this repository](https://github.com/davewalker5/NetworkCalculator/tags).
 
 ## Authors
 
 * **Dave Walker** - *Initial work* - [LinkedIn](https://www.linkedin.com/in/davewalker5/)
 
-See also the list of [contributors](https://github.com/davewalker5/SubnetCalculator/contributors) who 
+See also the list of [contributors](https://github.com/davewalker5/NetworkCalculator/contributors) who 
 participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/davewalker5/SubnetCalculator/blob/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/davewalker5/NetworkCalculator/blob/master/LICENSE) file for details.
