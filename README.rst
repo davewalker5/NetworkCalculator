@@ -2,7 +2,7 @@
     :target: https://github.com/davewalker5/NetworkCalculator/actions
     :alt: Build Status
 
-.. image:: https://codecov.io/gh/davewalker5/NetworkCalculator/branch/main/graph/badge.svg?token=U86UFDVD5S
+.. image:: https://codecov.io/gh/davewalker5/NetworkCalculator/branch/main/graph/badge.svg?token=1E72RZU3CQ
     :target: https://codecov.io/gh/davewalker5/NetworkCalculator
     :alt: Coverage
 
@@ -265,7 +265,7 @@ In this example:
 The following should be the output:
 
 ::
-    
+
     Subnet Mask       : 255.255.255.240
     Network Bits      : 28
 
