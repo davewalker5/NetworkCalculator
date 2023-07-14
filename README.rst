@@ -79,6 +79,7 @@ Returns the following details for the network specified in the request body:
 The request body is in text/json format can be supplied in one of two forms, depending on the format in which the IP address is specified:
 
 ::
+
     {
         "ip_address": "172.16.35.123",
         "subnet_mask": "255.255.240.0"
@@ -87,6 +88,7 @@ The request body is in text/json format can be supplied in one of two forms, dep
 or:
 
 ::
+
     {
         "ip_address": "172.16.35.123/20"
     }
@@ -96,6 +98,7 @@ Requests are sent using the POST verb.
 A typical response is:
 
 ::
+
     [
         {
             "broadcast": [172, 16, 47, 255],
@@ -126,6 +129,7 @@ Given an IP address and a subnet mask (or number of network bits) and a number o
 The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
 
 ::
+
     {
         "ip_address": "10.1.1.0",
         "subnet_mask": "255.255.255.0",
@@ -135,6 +139,7 @@ The request body is in text/json format can be supplied in  forms, depending on 
 or:
 
 ::
+
     {
         "ip_address": "10.1.1.0/24",
         "hosts": 14
@@ -147,6 +152,7 @@ Requests are sent using the POST verb.
 The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
 
 ::
+
     {
         "ip_address": "10.128.192.0",
         "subnet_mask": "255.255.192.0",
@@ -156,6 +162,7 @@ The request body is in text/json format can be supplied in  forms, depending on 
 or:
 
 ::
+
     {
         "ip_address": "10.128.192.0/18",
         "networks": 30
@@ -169,6 +176,7 @@ Response
 A typical response is as follows:
 
 ::
+
     [
         {
             "network_bits": 23,
@@ -208,6 +216,7 @@ Running the Application
 To run the REST API in the Flask development web server, enter the following from the root of the project:
 
 ::
+
     export PYTHONPATH=`pwd`/src
     export FLASK_DEBUG=1
     python -m api
@@ -216,6 +225,7 @@ The first two commands will need to be modified based on the current operating s
 is running, use the following commands in another terminal window to run the CLI:
 
 ::
+
     export PYTHONPATH=`pwd`/src
     python -m cli http://127.0.0.1 5000
 
@@ -224,6 +234,7 @@ The arguments are the host name and protocol for the API and the port number it'
 Once the CLI is running, the following should be displayed:
 
 ::
+
     API Host: http://localhost
     API Port: 8097
 
@@ -254,6 +265,7 @@ In this example:
 The following should be the output:
 
 ::
+    
     Subnet Mask       : 255.255.255.240
     Network Bits      : 28
 
