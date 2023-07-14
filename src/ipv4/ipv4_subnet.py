@@ -12,10 +12,10 @@ def calculate_subnets(ip_address, subnet_mask, number_of_hosts, number_of_networ
         raise ValueError(f"{number_of_networks} is not valid for the number of networks")
 
     if number_of_hosts == 0 and number_of_networks == 0:
-        raise ValueError(f"Must specify a number of hosts or a number of networks")
+        raise ValueError("Must specify a number of hosts or a number of networks")
 
     if number_of_hosts > 0 and number_of_networks > 0:
-        raise ValueError(f"Cannot specify both a number of hosts and a number of networks")
+        raise ValueError("Cannot specify both a number of hosts and a number of networks")
 
     # Get the IP address and number of network bits
     ip_address, network_bits = get_network_bits(ip_address, subnet_mask)

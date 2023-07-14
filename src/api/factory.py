@@ -1,6 +1,6 @@
 from os.path import dirname, join
 from flask import Flask
-from api.endpoints import *
+from api.endpoints import ipv4_bp
 from logging_wrapper import configure_logger, get_logger
 
 

@@ -4,7 +4,6 @@ from src.ipv4 import validate_octets
 
 def test_valid_octets():
     validate_octets([192, 168, 0, 10])
-    assert True
 
 
 def test_negative_octet_error():
