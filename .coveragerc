@@ -1,0 +1,16 @@
+[run]
+omit =
+    __main__.py
+    tests/*
+    src/api/*
+    src/cli/cli_main.py
+    src/cli/ipv4_network_details.py
+    src/cli/ipv4_subnetting.py
+    src/client/*
+    src/logging_wrapper/*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def print_network_details_row
+    def replay

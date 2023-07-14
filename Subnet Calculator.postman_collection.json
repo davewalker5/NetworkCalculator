@@ -1,0 +1,224 @@
+{
+	"info": {
+		"_postman_id": "742a663b-9138-49f9-b804-fd6fa73e7c9c",
+		"name": "Subnet Calculator",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10146994"
+	},
+	"item": [
+		{
+			"name": "ipv4",
+			"item": [
+				{
+					"name": "Network Details",
+					"item": [
+						{
+							"name": "With Subnet Mask",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"172.16.35.123\",\r\n    \"subnet_mask\": \"255.255.240.0\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ipv4/network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ipv4",
+										"network"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Without Subnet Mask",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ip_address\": \"172.16.35.123/20\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ipv4/network",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ipv4",
+										"network"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Subnetting",
+					"item": [
+						{
+							"name": "Hosts",
+							"item": [
+								{
+									"name": "With Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address\": \"10.1.1.0\",\r\n    \"subnet_mask\": \"255.255.255.0\",\r\n    \"hosts\": 14\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/subnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"subnet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Without Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address\": \"10.1.1.0/24\",\r\n    \"hosts\": 14\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/subnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"subnet"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Networks",
+							"item": [
+								{
+									"name": "Without Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address\": \"10.128.192.0/18\",\r\n    \"networks\": 30\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/subnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"subnet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "With Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address\": \"10.128.192.0\",\r\n    \"subnet_mask\": \"255.255.192.0\",\r\n    \"networks\": 30\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/subnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"subnet"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:5000",
+			"type": "string"
+		}
+	]
+}
