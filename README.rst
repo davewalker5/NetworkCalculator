@@ -212,8 +212,8 @@ To run the application, a virtual environment should be created, the requirement
 environment should be activated.
 
 
-Running the Application
------------------------
+Running the REST API and CLI
+----------------------------
 
 To run the REST API in the Flask development web server, enter the following from the root of the project:
 
