@@ -235,8 +235,8 @@ Once the CLI is running, the following should be displayed:
 
 ::
 
-    API Host: http://localhost
-    API Port: 8097
+    API Host: http://127.0.0.1
+    API Port: 5000
 
     1: Calculate Network Details
     2: Subnetting
