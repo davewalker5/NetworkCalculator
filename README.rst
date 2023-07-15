@@ -124,7 +124,8 @@ Given an IP address and a subnet mask (or number of network bits) and a number o
 - A set of subnets each of which can support a specified number of hosts
 - A specified number of subnets, each supporting as many hosts as possible
 
-### Subnets Supporting a Specified Number of Hosts
+Subnets Supporting a Specified Number of Hosts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
 
@@ -147,7 +148,8 @@ or:
 
 Requests are sent using the POST verb.
 
-### Subnet into a Specified Number of Networks
+Subnet into a Specified Number of Networks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
 
