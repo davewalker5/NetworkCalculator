@@ -59,10 +59,11 @@ Given an IP address and a subnet mask (or number of network bits) and a number o
 
 - A set of subnets each of which can support a specified number of hosts
 - A specified number of subnets, each supporting as many hosts as possible
+- A set of subnets with a specified number of network bits, each supporting as many hosts as possible
 
 ### Subnets Supporting a Specified Number of Hosts
 
-The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
+The request body is in text/json format and can be supplied in several forms, depending on the format in which the IP address is specified:
 
 ```
 {
@@ -83,9 +84,9 @@ or:
 
 Requests are sent using the POST verb.
 
-### Subnet into a Specified Number of Networks
+### Subnet Into a Specified Number of Networks
 
-The request body is in text/json format can be supplied in  forms, depending on the format in which the IP address is specified:
+The request body is in text/json format and can be supplied in several forms, depending on the format in which the IP address is specified:
 
 ```
 {
@@ -101,6 +102,29 @@ or:
 {
     "ip_address": "10.128.192.0/18",
     "networks": 30
+}
+```
+
+Requests are sent using the POST verb.
+
+### Subnet Based on a Number of Network Bits
+
+The request body is in text/json format and can be supplied in several forms, depending on the format in which the IP address is specified:
+
+```
+{
+    "ip_address": "192.168.1.96",
+    "subnet_mask": "255.255.255.240",
+    "network_bits": 30
+}
+```
+
+or:
+
+```
+{
+    "ip_address": "192.168.1.96/28",
+    "network_bits": 30
 }
 ```
 

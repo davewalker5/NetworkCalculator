@@ -33,7 +33,8 @@ def subnet():
         subnet_mask = payload["subnet_mask"] if "subnet_mask" in payload else None
         number_of_hosts = payload["hosts"] if "hosts" in payload else 0
         number_of_networks = payload["networks"] if "networks" in payload else 0
-        subnets = calculate_subnets(ip_address, subnet_mask, number_of_hosts, number_of_networks)
+        number_of_network_bits = payload["network_bits"] if "network_bits" in payload else 0
+        subnets = calculate_subnets(ip_address, subnet_mask, number_of_hosts, number_of_networks, number_of_network_bits)
         return subnets
 
     except BaseException as e:
