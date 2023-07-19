@@ -76,57 +76,121 @@
 							"item": [
 								{
 									"name": "With Subnet Mask",
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"ip_address\": \"10.1.1.0\",\r\n    \"subnet_mask\": \"255.255.255.0\",\r\n    \"hosts\": 14\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
+									"item": [
+										{
+											"name": "Example 1",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"ip_address\": \"10.1.1.0\",\r\n    \"subnet_mask\": \"255.255.255.0\",\r\n    \"hosts\": 14\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/ipv4/subnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"ipv4",
+														"subnet"
+													]
 												}
-											}
+											},
+											"response": []
 										},
-										"url": {
-											"raw": "{{baseUrl}}/ipv4/subnet",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"ipv4",
-												"subnet"
-											]
+										{
+											"name": "Example 2",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"ip_address\": \"192.168.1.64\",\r\n    \"subnet_mask\": \"255.255.255.192\",\r\n    \"hosts\": 8\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/ipv4/subnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"ipv4",
+														"subnet"
+													]
+												}
+											},
+											"response": []
 										}
-									},
-									"response": []
+									]
 								},
 								{
 									"name": "Without Subnet Mask",
-									"request": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\r\n    \"ip_address\": \"10.1.1.0/24\",\r\n    \"hosts\": 14\r\n}",
-											"options": {
-												"raw": {
-													"language": "json"
+									"item": [
+										{
+											"name": "Example 1",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"ip_address\": \"10.1.1.0/24\",\r\n    \"hosts\": 14\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/ipv4/subnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"ipv4",
+														"subnet"
+													]
 												}
-											}
+											},
+											"response": []
 										},
-										"url": {
-											"raw": "{{baseUrl}}/ipv4/subnet",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"ipv4",
-												"subnet"
-											]
+										{
+											"name": "Example 2",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"ip_address\": \"192.168.1.64/26\",\r\n    \"hosts\": 8\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/ipv4/subnet",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"ipv4",
+														"subnet"
+													]
+												}
+											},
+											"response": []
 										}
-									},
-									"response": []
+									]
 								}
 							]
 						},
@@ -217,7 +281,7 @@
 	"variable": [
 		{
 			"key": "baseUrl",
-			"value": "http://127.0.0.1:5000",
+			"value": "http://localhost:8097",
 			"type": "string"
 		}
 	]
