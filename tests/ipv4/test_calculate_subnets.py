@@ -2,7 +2,7 @@ import pytest
 from src.ipv4 import calculate_subnets
 
 
-def test_calculate_subnets_for_hosts_with_suffix():
+def test_calculate_subnets_for_hosts_with_suffix_1():
     subnets = calculate_subnets("10.1.1.0/24", None, 14, 0)
     number_of_networks = len(subnets["networks"])
     assert 16 == number_of_networks
@@ -15,7 +15,7 @@ def test_calculate_subnets_for_hosts_with_suffix():
     assert ["00001010", "00000001", "00000001", "11110000"] == subnets["networks"][number_of_networks - 1]["network_binary"]
 
 
-def test_calculate_subnets_for_hosts_without_suffix():
+def test_calculate_subnets_for_hosts_without_suffix_1():
     subnets = calculate_subnets("10.1.1.0", "255.255.255.0", 14, 0)
     number_of_networks = len(subnets["networks"])
     assert 16 == number_of_networks
@@ -28,7 +28,33 @@ def test_calculate_subnets_for_hosts_without_suffix():
     assert ["00001010", "00000001", "00000001", "11110000"] == subnets["networks"][number_of_networks - 1]["network_binary"]
 
 
-def test_calculate_subnets_for_networks_with_suffix():
+def test_calculate_subnets_for_hosts_with_suffix_2():
+    subnets = calculate_subnets("192.168.1.64/26", None, 8, 0)
+    number_of_networks = len(subnets["networks"])
+    assert 4 == number_of_networks
+    assert 28 == subnets["network_bits"]
+    assert [255, 255, 255, 240] == subnets["subnet_mask"]
+    assert ["11111111", "11111111", "11111111", "11110000"] == subnets["subnet_mask_binary"]
+    assert [192, 168, 1, 64] == subnets["networks"][0]["network"]
+    assert ['11000000', '10101000', '00000001', '01000000'] == subnets["networks"][0]["network_binary"]
+    assert [192, 168, 1, 112] == subnets["networks"][number_of_networks - 1]["network"]
+    assert ['11000000', '10101000', '00000001', '01110000'] == subnets["networks"][number_of_networks - 1]["network_binary"]
+
+
+def test_calculate_subnets_for_hosts_without_suffix_2():
+    subnets = calculate_subnets("192.168.1.64", "255.255.255.192", 8, 0)
+    number_of_networks = len(subnets["networks"])
+    assert 4 == number_of_networks
+    assert 28 == subnets["network_bits"]
+    assert [255, 255, 255, 240] == subnets["subnet_mask"]
+    assert ["11111111", "11111111", "11111111", "11110000"] == subnets["subnet_mask_binary"]
+    assert [192, 168, 1, 64] == subnets["networks"][0]["network"]
+    assert ['11000000', '10101000', '00000001', '01000000'] == subnets["networks"][0]["network_binary"]
+    assert [192, 168, 1, 112] == subnets["networks"][number_of_networks - 1]["network"]
+    assert ['11000000', '10101000', '00000001', '01110000'] == subnets["networks"][number_of_networks - 1]["network_binary"]
+
+
+def test_calculate_subnets_for_networks_with_suffix_3():
     subnets = calculate_subnets("10.128.192.0/18", None, 0, 30)
     number_of_networks = len(subnets["networks"])
     assert 32 == number_of_networks
@@ -41,7 +67,7 @@ def test_calculate_subnets_for_networks_with_suffix():
     assert ['00001010', '10000000', '11111110', '00000000'] == subnets["networks"][number_of_networks - 1]["network_binary"]
 
 
-def test_calculate_subnets_for_networks_without_suffix():
+def test_calculate_subnets_for_networks_without_suffix_3():
     subnets = calculate_subnets("10.128.192.0", "255.255.192.0", 0, 30)
     number_of_networks = len(subnets["networks"])
     assert 32 == number_of_networks

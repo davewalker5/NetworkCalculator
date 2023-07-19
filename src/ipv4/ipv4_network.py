@@ -6,11 +6,10 @@ def calculate_network_properties(ip_address, subnet_mask):
     Given an IP address and a subnet mask, both in dotted decimal format, return
     the network, first host, last host and broadcast addresses
 
-    :param ip_address: IP address string
-    :param subnet_mask: Subnet mask string
-    :return
+    :param ip_address: IP address string in dotted-decimal notation, optionally with the /n suffix
+    :param subnet_mask: Subnet mask string in dotted-decimal notation, or none if the IP address has the /n suffix
+    :return: Dictionary of network addresses
     """
-
     # Get the IP address and number of network bits
     ip_address, network_bits = get_network_bits(ip_address, subnet_mask)
 
