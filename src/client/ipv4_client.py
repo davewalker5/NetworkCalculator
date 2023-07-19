@@ -5,8 +5,8 @@ class IPv4Client(SubnetClientBase):
     NETWORK_ROUTE = "/ipv4/network"
     SUBNET_ROUTE = "/ipv4/subnet"
 
-    def __init__(self, host, port, timeout=5):
-        super(IPv4Client, self).__init__(host, port, timeout)
+    def __init__(self, api_url, timeout=5):
+        super(IPv4Client, self).__init__(api_url, timeout)
 
     def get_network_details(self, ip_address, subnet_mask=None):
         """
@@ -16,7 +16,7 @@ class IPv4Client(SubnetClientBase):
         :param subnet_mask: Subnet mask in dotted decimal  (not needed if IP address includes /n)
         :return: Dictionary of network details
         """
-        url = f"{self._host}:{self._port}{self.NETWORK_ROUTE}"
+        url = f"{self._api_url}{self.NETWORK_ROUTE}"
         payload = {
             "ip_address": ip_address
         }
@@ -27,7 +27,7 @@ class IPv4Client(SubnetClientBase):
         network_details = self._send_request(url, payload)
         return network_details
 
-    def get_subnet_details(self, ip_address, subnet_mask=None, hosts=None, networks=None):
+    def get_subnet_details(self, ip_address, subnet_mask=None, hosts=None, networks=None, network_bits=None):
         """
         Request and return subnet details for the specified IP and subnet mask. One of the
         number of hosts or number of networks must be specified, but not both
@@ -38,7 +38,7 @@ class IPv4Client(SubnetClientBase):
         :param networks: Required number of networks per subnet
         :return: Dictionary of subnet details
         """
-        url = f"{self._host}:{self._port}{self.SUBNET_ROUTE}"
+        url = f"{self._api_url}{self.SUBNET_ROUTE}"
         payload = {
             "ip_address": ip_address
         }
@@ -51,6 +51,9 @@ class IPv4Client(SubnetClientBase):
 
         if networks:
             payload["networks"] = networks
+
+        if network_bits:
+            payload["network_bits"] = network_bits
 
         subnet_details = self._send_request(url, payload)
         return subnet_details

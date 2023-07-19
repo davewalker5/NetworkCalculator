@@ -3,9 +3,8 @@ from requests.exceptions import JSONDecodeError
 
 
 class SubnetClientBase:
-    def __init__(self, host, port, timeout):
-        self._host = host
-        self._port = port
+    def __init__(self, api_url, timeout):
+        self._api_url = api_url
         self._timeout = timeout
 
     def _send_request(self, url, payload):

@@ -3,19 +3,22 @@ from cli.user_input import prompt_for_string, prompt_for_integer
 from cli.presentation import create_ip_string, print_network_details_row, IP_COLUMN_WIDTH
 
 
-def request_subnet_details(host, port, ip_address, subnet_mask, hosts, networks):
+def request_subnet_details(api_url, ip_address, subnet_mask, hosts, networks, network_bits):
     """
     Given an IP address, subnet mask and a number of hosts/networks to subnet for, call the API to retrieve
     the subnet details
 
-    :param host: Protocol and hostname for the REST API
+    :param api_url: Protocol, hostname and port for the REST API
     :param port: Port number for the REST API
     :param ip_address: IP address in dotted decimal notation with optional /n suffix
     :param subnet_mask: Subnet mask in dotted decimal (or None if the IP address includes /n)
+    :param hosts: Number of hosts to accommodate or 0
+    :param networks: Number of subnets required or 0
+    :param network_bits: Number of network bits required or 0
     """
     try:
-        client = IPv4Client(host, port)
-        subnets = client.get_subnet_details(ip_address, subnet_mask, hosts, networks)
+        client = IPv4Client(api_url)
+        subnets = client.get_subnet_details(ip_address, subnet_mask, hosts, networks, network_bits)
 
         # Print overview details
         print()
@@ -47,12 +50,11 @@ def request_subnet_details(host, port, ip_address, subnet_mask, hosts, networks)
         print()
 
 
-def subnetting_main(host, port):
+def subnetting_main(api_url):
     """
     Entry point for subnetting calculation and reporting
 
-    :param host: Protocol and hostname for the REST API
-    :param port: Port number for the REST API
+    :param api_url: Protocol, hostname and port for the REST API
     """
     while True:
         print("IPv4 Subnet Calculator")
@@ -71,4 +73,8 @@ def subnetting_main(host, port):
         if networks == None:
             break
 
-        request_subnet_details(host, port, ip_address, subnet_mask, hosts, networks)
+        network_bits = prompt_for_integer("Number of Network Bits?", 0, None)
+        if network_bits == None:
+            break
+
+        request_subnet_details(api_url, ip_address, subnet_mask, hosts, networks, network_bits)

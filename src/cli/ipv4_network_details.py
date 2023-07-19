@@ -3,17 +3,16 @@ from cli.user_input import prompt_for_string
 from cli.presentation import create_ip_string
 
 
-def request_network_details(host, port, ip_address, subnet_mask):
+def request_network_details(api_url, ip_address, subnet_mask):
     """
     Given an IP address and subnet mask, call the API to retrieve
 
-    :param host: Protocol and hostname for the REST API
-    :param port: Port number for the REST API
+    :param api_url: Protocol, hostname and port for the REST API
     :param ip_address: IP address in dotted decimal notation with optional /n suffix
     :param subnet_mask: Subnet mask in dotted decimal (or None if the IP address includes /n)
     """
     try:
-        client = IPv4Client(host, port)
+        client = IPv4Client(api_url)
         details = client.get_network_details(ip_address, subnet_mask)
 
         print()
@@ -30,12 +29,11 @@ def request_network_details(host, port, ip_address, subnet_mask):
         print()
 
 
-def network_details_main(host, port):
+def network_details_main(api_url):
     """
     Entry point for network details calculation and reporting
 
-    :param host: Protocol and hostname for the REST API
-    :param port: Port number for the REST API
+    :param api_url: Protocol, hostname and port for the REST API
     """
     while True:
         print("IPv4 Network Details Calculator")
@@ -47,4 +45,4 @@ def network_details_main(host, port):
 
         subnet_mask = prompt_for_string("Subnet Mask?")
 
-        request_network_details(host, port, ip_address, subnet_mask)
+        request_network_details(api_url, ip_address, subnet_mask)

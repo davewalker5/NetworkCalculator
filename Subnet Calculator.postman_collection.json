@@ -252,6 +252,65 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Subnet Bits",
+							"item": [
+								{
+									"name": "Without Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address\": \"192.168.1.96/28\",\r\n    \"network_bits\": 30\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/subnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"subnet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "With Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address\": \"192.168.1.96\",\r\n    \"subnet_mask\": \"255.255.255.240\",\r\n    \"network_bits\": 30\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/subnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"subnet"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				}
