@@ -178,22 +178,22 @@ Subnet Based on a Number of Network Bits
 
 The request body is in text/json format and can be supplied in several forms, depending on the format in which the IP address is specified:
 
-```
-{
-    "ip_address": "192.168.1.96",
-    "subnet_mask": "255.255.255.240",
-    "network_bits": 30
-}
-```
+::
+
+    {
+        "ip_address": "192.168.1.96",
+        "subnet_mask": "255.255.255.240",
+        "network_bits": 30
+    }
 
 or:
 
-```
-{
-    "ip_address": "192.168.1.96/28",
-    "network_bits": 30
-}
-```
+::
+
+    {
+        "ip_address": "192.168.1.96/28",
+        "network_bits": 30
+    }
 
 Requests are sent using the POST verb.
 
