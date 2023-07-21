@@ -1,5 +1,5 @@
 from . import get_network_bits, calculate_all_ip_addresses, split_address, calculate_ip_address, \
-    convert_binary_string_to_decimal_octets, calculate_subnet_mask
+    convert_binary_string_to_decimal_octets, calculate_subnet_mask, convert_octets_to_binary
 from common import AddressType
 
 
@@ -125,3 +125,28 @@ def calculate_subnets(ip_address, subnet_mask=None, number_of_hosts=0, number_of
         "subnet_mask_binary": binary_subnet_mask,
         "networks": networks
     }
+
+
+def same_subnet(ip_address_1, ip_address_2, subnet_mask=None):
+    # Parse the two IP addresses to return the IP address without /n suffix and the number of network bits
+    ip_address_1, network_bits_1 = get_network_bits(ip_address_1, subnet_mask)
+    ip_address_2, network_bits_2 = get_network_bits(ip_address_2, subnet_mask)
+
+    # If the number of network bits aren't the same, they're not on the same subnet
+    if network_bits_1 != network_bits_2:
+        return 
+
+    # Calculate which octet the network bits end in
+    final_network_octet = network_bits_1 // 8
+    if final_network_octet % 8 > 0:
+        final_network_octet = final_network_octet + 1
+
+    # Split the two IP addresses into octets and then to a non-delimited binary representation
+    octets_1 = split_address(ip_address_1)
+    octets_2 = split_address(ip_address_2)
+    binary_1 = "".join(convert_octets_to_binary(octets_1))
+    binary_2 = "".join(convert_octets_to_binary(octets_2))
+
+    # If the network bits are the same in both, they're on the same subnet
+    in_same_subnet = binary_1[:network_bits_1] == binary_2[:network_bits_1]
+    return in_same_subnet

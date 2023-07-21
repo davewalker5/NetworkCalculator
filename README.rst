@@ -227,6 +227,39 @@ A typical response is as follows:
 The "networks" element of the response is a list of network details for each of the calculated subnets.
 
 
+/ipv4/samesubnet
+----------------
+
+Determines whether or not two IP addresses are on the same subnet. The request body is in text/json format and can be supplied in several forms, depending on the format in which the IP address is specified:
+
+::
+
+    {
+        "ip_address_1": "10.1.255.1",
+        "ip_address_2": "10.1.128.2",
+        "subnet_mask": "255.255.128.0"
+    }
+
+or:
+
+::
+
+    {
+        "ip_address_1": "10.1.255.1/17",
+        "ip_address_2": "10.1.128.2/17"
+    }
+
+Requests are sent using the POST verb.
+
+A typical response is as follows:
+
+::
+
+    {
+        "same_subnet": true
+    }
+
+
 Running the Application
 =======================
 
@@ -267,6 +300,7 @@ Once the CLI is running, the following should be displayed:
 
     1: Calculate Network Details
     2: Subnetting
+    3: Same Subnet
 
     Which calculation do you want to do?
 
