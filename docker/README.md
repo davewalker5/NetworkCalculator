@@ -181,8 +181,6 @@ or:
 
 Requests are sent using the POST verb.
 
-### Response
-
 A typical response is as follows:
 
 ```
