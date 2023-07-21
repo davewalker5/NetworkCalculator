@@ -311,6 +311,119 @@
 									"response": []
 								}
 							]
+						},
+						{
+							"name": "Same Subnet",
+							"item": [
+								{
+									"name": "Same - Without Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address_1\": \"10.1.255.1/17\",\r\n    \"ip_address_2\": \"10.1.128.2/17\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/samesubnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"samesubnet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Different - Without Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address_1\": \"10.1.248.1/20\",\r\n    \"ip_address_2\": \"10.1.192.2/20\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/samesubnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"samesubnet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Same - With Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address_1\": \"10.1.255.1\",\r\n    \"ip_address_2\": \"10.1.128.2\",\r\n    \"subnet_mask\": \"255.255.128.0\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/samesubnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"samesubnet"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Different - With Subnet Mask",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"ip_address_1\": \"10.1.248.1\",\r\n    \"ip_address_2\": \"10.1.192.2\",\r\n    \"subnet_mask\": \"255.255.240.0\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/ipv4/samesubnet",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"ipv4",
+												"samesubnet"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						}
 					]
 				}

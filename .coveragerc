@@ -6,6 +6,7 @@ omit =
     src/cli/cli_main.py
     src/cli/ipv4_network_details.py
     src/cli/ipv4_subnetting.py
+    src/cli/ipv4_same_subnet.py
     src/client/*
     src/logging_wrapper/*
 

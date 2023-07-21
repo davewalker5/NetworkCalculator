@@ -10,6 +10,7 @@ from .ipv4_utils import split_address
 from .ipv4_utils import validate_octets
 from .ipv4_network import calculate_network_properties
 from .ipv4_subnet import calculate_subnets
+from .ipv4_subnet import same_subnet
 
 
 __all__ = [
@@ -23,6 +24,7 @@ __all__ = [
     "convert_binary_string_to_decimal_octets",
     "convert_octets_to_binary",
     "get_network_bits",
+    "same_subnet",
     "split_address",
     "validate_octets"
 ]
