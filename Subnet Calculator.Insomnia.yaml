@@ -1,0 +1,631 @@
+_type: export
+__export_format: 4
+__export_date: 2023-09-29T13:29:27.297Z
+__export_source: insomnia.desktop.app:v8.1.0
+resources:
+  - _id: req_ea8cd6eb3ec44106a6aa7f1864b84703
+    parentId: fld_fae0abe12d0f456ea49654f2aeb91ca1
+    modified: 1695993869644
+    created: 1695993628887
+    url: "{{ _.baseUrl }}/ipv4/samesubnet"
+    name: Different - With Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address_1\": \"10.1.248.1\",\r
+
+        \    \"ip_address_2\": \"10.1.192.2\",\r
+
+        \    \"subnet_mask\": \"255.255.240.0\"\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628887
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_fae0abe12d0f456ea49654f2aeb91ca1
+    parentId: fld_e5ef6ebff0834cd2a4aaced776aac5fa
+    modified: 1695993628884
+    created: 1695993628884
+    name: Same Subnet
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628884
+    _type: request_group
+  - _id: fld_e5ef6ebff0834cd2a4aaced776aac5fa
+    parentId: fld_ad2eb236261f44e0b7800240308a834f
+    modified: 1695993628871
+    created: 1695993628871
+    name: Subnetting
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628871
+    _type: request_group
+  - _id: fld_ad2eb236261f44e0b7800240308a834f
+    parentId: fld_da090d1bbe2a4ce5a3e9646d19abfc26
+    modified: 1695993628800
+    created: 1695993628800
+    name: ipv4
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628800
+    _type: request_group
+  - _id: fld_da090d1bbe2a4ce5a3e9646d19abfc26
+    parentId: wrk_5c3b4cac137343a1bbb16cac1b5539d4
+    modified: 1695993628799
+    created: 1695993628799
+    name: Subnet Calculator
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628799
+    _type: request_group
+  - _id: wrk_5c3b4cac137343a1bbb16cac1b5539d4
+    parentId: null
+    modified: 1695994095434
+    created: 1695994095434
+    name: Subnet Calculator
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_aba21cfa4fb544c6a7db3897fb7e35be
+    parentId: fld_fae0abe12d0f456ea49654f2aeb91ca1
+    modified: 1695993628886
+    created: 1695993628886
+    url: "{{ _.baseUrl }}/ipv4/samesubnet"
+    name: Same - With Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address_1\": \"10.1.255.1\",\r
+
+        \    \"ip_address_2\": \"10.1.128.2\",\r
+
+        \    \"subnet_mask\": \"255.255.128.0\"\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628886
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e9f0e94e698f41cdafabbd42f970ffbf
+    parentId: fld_fae0abe12d0f456ea49654f2aeb91ca1
+    modified: 1695993628885
+    created: 1695993628885
+    url: "{{ _.baseUrl }}/ipv4/samesubnet"
+    name: Same - Without Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address_1\": \"10.1.255.1/17\",\r
+
+        \    \"ip_address_2\": \"10.1.128.2/17\"\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628885
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_bce8417bd0a345f99f44b75e6fa1ff60
+    parentId: fld_fae0abe12d0f456ea49654f2aeb91ca1
+    modified: 1695993628885
+    created: 1695993628885
+    url: "{{ _.baseUrl }}/ipv4/samesubnet"
+    name: Different - Without Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address_1\": \"10.1.248.1/20\",\r
+
+        \    \"ip_address_2\": \"10.1.192.2/20\"\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628885
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b7b75834229a4b8ebc7bd6aaa7cb30f7
+    parentId: fld_a242d0ac9a1c4eb1b8f1ddcaff275be0
+    modified: 1695993628883
+    created: 1695993628883
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: With Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"192.168.1.96\",\r
+
+        \    \"subnet_mask\": \"255.255.255.240\",\r
+
+        \    \"network_bits\": 30\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628883
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_a242d0ac9a1c4eb1b8f1ddcaff275be0
+    parentId: fld_e5ef6ebff0834cd2a4aaced776aac5fa
+    modified: 1695993628882
+    created: 1695993628882
+    name: Subnet Bits
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628882
+    _type: request_group
+  - _id: req_862c00998b3441dfb7b3e4374c9ecc7e
+    parentId: fld_a242d0ac9a1c4eb1b8f1ddcaff275be0
+    modified: 1695993628882
+    created: 1695993628882
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: Without Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"192.168.1.96/28\",\r
+
+        \    \"network_bits\": 30\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628882
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_cd5b32e1288340d0895487becec66572
+    parentId: fld_8ca65cac7f704c7192f9a6fe5fae8256
+    modified: 1695993628881
+    created: 1695993628881
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: With Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"10.128.192.0\",\r
+
+        \    \"subnet_mask\": \"255.255.192.0\",\r
+
+        \    \"networks\": 30\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628881
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_8ca65cac7f704c7192f9a6fe5fae8256
+    parentId: fld_e5ef6ebff0834cd2a4aaced776aac5fa
+    modified: 1695993628879
+    created: 1695993628879
+    name: Networks
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628879
+    _type: request_group
+  - _id: req_efba24a207d74bdc9cd5da067bc8b9dc
+    parentId: fld_8ca65cac7f704c7192f9a6fe5fae8256
+    modified: 1695993628880
+    created: 1695993628880
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: Without Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"10.128.192.0/18\",\r
+
+        \    \"networks\": 30\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628880
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_c19f41e81bc744839ec798bde9bffc0c
+    parentId: fld_f4ed57a2d6d341d4b7535ec23b6a9d66
+    modified: 1695993628879
+    created: 1695993628879
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: Example 2
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"192.168.1.64/26\",\r
+
+        \    \"hosts\": 8\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628879
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_f4ed57a2d6d341d4b7535ec23b6a9d66
+    parentId: fld_32dbe4fdd48b40379ea30b3af7d0ed44
+    modified: 1695993628877
+    created: 1695993628877
+    name: Without Subnet Mask
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628877
+    _type: request_group
+  - _id: fld_32dbe4fdd48b40379ea30b3af7d0ed44
+    parentId: fld_e5ef6ebff0834cd2a4aaced776aac5fa
+    modified: 1695993628873
+    created: 1695993628873
+    name: Hosts
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628873
+    _type: request_group
+  - _id: req_bdcc3106939641859caf614ea0128358
+    parentId: fld_f4ed57a2d6d341d4b7535ec23b6a9d66
+    modified: 1695993628878
+    created: 1695993628878
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: Example 1
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"10.1.1.0/24\",\r
+
+        \    \"hosts\": 14\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628878
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_a38ffb6178d54dfca6196d9c5b535a95
+    parentId: fld_76bce2adbbc34968907acfcf3f5866ec
+    modified: 1695993628876
+    created: 1695993628876
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: Example 2
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"192.168.1.64\",\r
+
+        \    \"subnet_mask\": \"255.255.255.192\",\r
+
+        \    \"hosts\": 8\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628876
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_76bce2adbbc34968907acfcf3f5866ec
+    parentId: fld_32dbe4fdd48b40379ea30b3af7d0ed44
+    modified: 1695993628874
+    created: 1695993628874
+    name: With Subnet Mask
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628874
+    _type: request_group
+  - _id: req_0dd0a212e6084eab9cf27d40b321bbe2
+    parentId: fld_76bce2adbbc34968907acfcf3f5866ec
+    modified: 1695993628875
+    created: 1695993628875
+    url: "{{ _.baseUrl }}/ipv4/subnet"
+    name: Example 1
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"10.1.1.0\",\r
+
+        \    \"subnet_mask\": \"255.255.255.0\",\r
+
+        \    \"hosts\": 14\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628875
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_e725c639a4ce41bd951fd2e3b9351f14
+    parentId: fld_b73f7af355e64be9a409e55238a9d671
+    modified: 1695993628853
+    created: 1695993628853
+    url: "{{ _.baseUrl }}/ipv4/network"
+    name: Without Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"172.16.35.123/20\"\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628853
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: fld_b73f7af355e64be9a409e55238a9d671
+    parentId: fld_ad2eb236261f44e0b7800240308a834f
+    modified: 1695993628810
+    created: 1695993628810
+    name: Network Details
+    description: ""
+    environment: {}
+    environmentPropertyOrder: null
+    metaSortKey: -1695993628810
+    _type: request_group
+  - _id: req_2a62e4096d5147db8301115a72aaf3a3
+    parentId: fld_b73f7af355e64be9a409e55238a9d671
+    modified: 1695993628822
+    created: 1695993628822
+    url: "{{ _.baseUrl }}/ipv4/network"
+    name: With Subnet Mask
+    description: ""
+    method: POST
+    body:
+      mimeType: ""
+      text: "{\r
+
+        \    \"ip_address\": \"172.16.35.123\",\r
+
+        \    \"subnet_mask\": \"255.255.240.0\"\r
+
+        }"
+    parameters: []
+    headers:
+      - id: pair_83e337cec91c45eb8368289e86a0c04e
+        name: Content-Type
+        value: application/json
+        description: ""
+        disabled: false
+    authentication: {}
+    metaSortKey: -1695993628822
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_adc777b1d09e4797a53e98527a97e3c3
+    parentId: wrk_5c3b4cac137343a1bbb16cac1b5539d4
+    modified: 1695993630951
+    created: 1695993630951
+    name: Base Environment
+    data: {}
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1695993630951
+    _type: environment
+  - _id: jar_3b4c6908c8284820bdf91bfc82955251
+    parentId: wrk_5c3b4cac137343a1bbb16cac1b5539d4
+    modified: 1695993630967
+    created: 1695993630967
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: env_6921d12a62d84a02a501482a39186156
+    parentId: env_adc777b1d09e4797a53e98527a97e3c3
+    modified: 1695993664915
+    created: 1695993636987
+    name: NetworkCalculator
+    data:
+      baseUrl: http://localhost:8097
+    dataPropertyOrder:
+      "&":
+        - baseUrl
+    color: null
+    isPrivate: false
+    metaSortKey: 1695993636987
+    _type: environment
