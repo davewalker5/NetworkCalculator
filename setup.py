@@ -30,7 +30,7 @@ api_package_data = find_package_files("src/api/", "src/api/")
 
 setuptools.setup(
     name="subnet_calculator",
-    version="1.0.3",
+    version="1.1.1",
     description="Subnet Calculator",
     packages=setuptools.find_packages("src"),
     include_package_data=True,
