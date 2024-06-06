@@ -66,15 +66,9 @@ def subnetting_main(api_url):
 
         subnet_mask = prompt_for_string("Subnet Mask?")
         hosts = prompt_for_integer("Number of Hosts?", 0, None)
-        if hosts == None:
-            break
-
         networks = prompt_for_integer("Number of Networks?", 0, None)
-        if networks == None:
-            break
-
         network_bits = prompt_for_integer("Number of Network Bits?", 0, None)
-        if network_bits == None:
+        if hosts == None and networks == None and network_bits == None:
             break
 
         request_subnet_details(api_url, ip_address, subnet_mask, hosts, networks, network_bits)
