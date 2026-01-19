@@ -5,7 +5,13 @@ from logging.handlers import RotatingFileHandler
 
 LOGGER_NAME = "werkzeug"
 HOSTNAME = socket.gethostname()
-IP_ADDRESS = socket.gethostbyname(HOSTNAME)
+
+try:
+    IP_ADDRESS = socket.gethostbyname(HOSTNAME)
+except OSError:
+    # Fallbacks if hostname can't be resolved
+    IP_ADDRESS = "127.0.0.1"
+    HOSTNAME = HOSTNAME or "localhost"
 
 
 def configure_logger(log_file_path, log_file_max_size):
