@@ -16,5 +16,5 @@ python -m venv venv
 # Make sure pip is up to date
 pip install --upgrade pip
 
-# Install the requirements
-pip install -r requirements.txt
+# Install the project and its development dependencies
+pip install -e ".[dev]"
